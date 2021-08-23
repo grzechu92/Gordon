@@ -184,7 +184,7 @@ internal abstract class GordonTestTask @Inject constructor(
                 problematicDevices = problematicDevices,
             ).bind()
 
-            pools = pools.filterProblematicDevices(problematicDevices)
+            val pools = originalPools.filterProblematicDevices(problematicDevices)
             pools.validateDevicePools().bind()
 
             val testResults = runAllTests(
