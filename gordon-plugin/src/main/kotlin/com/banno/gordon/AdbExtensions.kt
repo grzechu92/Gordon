@@ -183,7 +183,7 @@ internal fun List<Device>.reinstall(
     }.forEach { it.bind() }
 }
 
-internal fun Either<Throwable, Unit>.ignoreErrorIfPossible(
+private fun Either<Throwable, Unit>.ignoreErrorIfPossible(
     device: Device,
     logger: Logger,
     ignoreProblematicDevices: Boolean,
