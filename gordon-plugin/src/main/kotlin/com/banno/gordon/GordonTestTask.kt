@@ -193,7 +193,7 @@ internal abstract class GordonTestTask @Inject constructor(
                 instrumentationPackage = instrumentationPackage.get(),
                 instrumentationRunnerOptions = instrumentationRunnerOptions.get(),
                 allTestCases = testCases,
-                allPools = pools.filterProblematicDevices(problematicDevices),
+                allPools = pools,
                 retryQuota = retryQuota.get(),
                 testTimeoutMillis = testTimeoutMillis.get()
             ).bind()
