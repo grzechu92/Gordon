@@ -155,7 +155,7 @@ internal abstract class GordonTestTask @Inject constructor(
                 .filter { it.matchesFilter(testFilters.get()) }
 
             testCases.validateTestCases().bind()
-            pools.validateDevicePools().bind()
+            originalPools.validateDevicePools().bind()
 
             val applicationAab = applicationAab.get().asFile.takeUnless { it == PLACEHOLDER_APPLICATION_AAB }
             val applicationPackage = applicationPackage.get().takeUnless { it == PLACEHOLDER_APPLICATION_PACKAGE }
