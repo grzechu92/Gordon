@@ -69,7 +69,7 @@ internal abstract class GordonTestTask @Inject constructor(
     @get:Input
     internal val tabletShortestWidthDp: Property<Int> = objects.property()
 
-    @get:Input
+    @get:Internal
     internal val ignoreProblematicDevices: Property<Boolean> = objects.property()
 
     @get:Internal
