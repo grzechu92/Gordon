@@ -202,7 +202,7 @@ internal abstract class GordonTestTask @Inject constructor(
 
             val htmlReportPath = testResults.htmlReport().write(reportDirectory.get().asFile).bind()
 
-            pools.filterProblematicDevices(problematicDevices).flatMap { it.devices }.safeUninstall(
+            originalPools.flatMap { it.devices }.safeUninstall(
                 dispatcher = Dispatchers.Default,
                 timeoutMillis = installTimeoutMillis.get(),
                 applicationPackage = applicationPackage,
