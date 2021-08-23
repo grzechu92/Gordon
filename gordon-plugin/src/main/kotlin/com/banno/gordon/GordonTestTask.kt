@@ -146,7 +146,7 @@ internal abstract class GordonTestTask @Inject constructor(
 
             val adb = initializeDefaultAdbServer().bind()
             val problematicDevices = mutableListOf<Device>()
-            var pools = calculatePools(
+            val originalPools = calculatePools(
                 adb,
                 poolingStrategy.get(),
                 tabletShortestWidthDp.get().takeIf { it > -1 }
