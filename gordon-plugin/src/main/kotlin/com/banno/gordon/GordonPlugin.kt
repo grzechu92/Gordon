@@ -53,7 +53,7 @@ class GordonPlugin : Plugin<Project> {
             applicationAab: Provider<RegularFile>?,
             applicationSigningConfig: SigningConfig?,
             testInstrumentationRunnerArguments: Map<String, String>,
-            animationsDisabled: Boolean
+            animationsDisabled: Boolean,
         ) {
             task.rootProjectBuildDirectory.set(project.rootProject.layout.buildDirectory)
 
@@ -93,6 +93,7 @@ class GordonPlugin : Plugin<Project> {
             task.testTimeoutMillis.set(gordonExtension.testTimeoutMillis)
             task.extensionTestFilter.set(gordonExtension.testFilter)
             task.extensionTestInstrumentationRunner.set(gordonExtension.testInstrumentationRunner)
+            task.ignoreProblematicDevices.set(gordonExtension.ignoreProblematicDevices)
         }
 
         val testedExtension = project.extensions.getByType<TestedExtension>()
