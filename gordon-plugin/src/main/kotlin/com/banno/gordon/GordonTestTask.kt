@@ -245,7 +245,7 @@ internal fun List<TestCase>.validateTestCases() =
 
 internal fun List<DevicePool>.filterProblematicDevices(problematicDevices: List<Device>) =
     map { pool ->
-        DevicePool(pool.poolName, pool.devices - problematicDevices)
+        pool.copy(devices = pool.devices - problematicDevices)
     }
 
 internal fun TestCase.matchesFilter(filters: List<String>): Boolean {
