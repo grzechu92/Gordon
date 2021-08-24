@@ -169,7 +169,7 @@ internal abstract class GordonTestTask @Inject constructor(
                 keyPassword = signingConfigCredentials.get().keyPassword
             )
 
-            pools.flatMap { it.devices }.reinstall(
+            originalPools.flatMap { it.devices }.reinstall(
                 dispatcher = Dispatchers.Default,
                 logger = logger,
                 applicationPackage = applicationPackage,
@@ -202,7 +202,7 @@ internal abstract class GordonTestTask @Inject constructor(
 
             val htmlReportPath = testResults.htmlReport().write(reportDirectory.get().asFile).bind()
 
-            originalPools.flatMap { it.devices }.safeUninstall(
+            pools.flatMap { it.devices }.safeUninstall(
                 dispatcher = Dispatchers.Default,
                 timeoutMillis = installTimeoutMillis.get(),
                 applicationPackage = applicationPackage,
