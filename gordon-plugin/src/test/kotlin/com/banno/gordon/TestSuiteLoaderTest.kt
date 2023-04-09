@@ -44,8 +44,27 @@ class TestSuiteLoaderTest {
             TestCase("com.banno.android.gordontest.ParameterizedTest", "parameterizedPass", false, setOf("org.junit.runner.RunWith", "org.junit.Test")),
             TestCase("com.banno.android.gordontest.StandardTest", "standardA", false, setOf("org.junit.Test")),
             TestCase("com.banno.android.gordontest.StandardTest", "standardB", false, setOf("org.junit.Test")),
-            TestCase("com.banno.android.gordontest.StandardTest", "standardIgnore", true, setOf("org.junit.Ignore", "org.junit.Test"))
-        )
+            TestCase("com.banno.android.gordontest.StandardTest", "standardIgnore", true, setOf("org.junit.Ignore", "org.junit.Test")),
+            TestCase(
+                "com.banno.android.gordontest.TestA",
+                "test1",
+                false,
+                setOf("org.junit.Test", "com.banno.android.gordontest.FirstSubTestSuite", "com.banno.android.gordontest.NestedTestSuite", "com.banno.android.gordontest.TestSuite")
+            ),
+            TestCase(
+                "com.banno.android.gordontest.TestA",
+                "test2",
+                false,
+                setOf("org.junit.Test", "com.banno.android.gordontest.FirstSubTestSuite", "com.banno.android.gordontest.NestedTestSuite", "com.banno.android.gordontest.TestSuite")
+            ),
+            TestCase("com.banno.android.gordontest.TestB", "test1", false, setOf("org.junit.Test", "com.banno.android.gordontest.NestedTestSuite", "com.banno.android.gordontest.TestSuite")),
+            TestCase("com.banno.android.gordontest.TestB", "test2", false, setOf("org.junit.Test", "com.banno.android.gordontest.NestedTestSuite", "com.banno.android.gordontest.TestSuite")),
+            TestCase("com.banno.android.gordontest.TestC", "test1", false, setOf("org.junit.Test", "com.banno.android.gordontest.TestSuite")),
+            TestCase("com.banno.android.gordontest.TestC", "test2", false, setOf("org.junit.Test", "com.banno.android.gordontest.TestSuite")),
+            TestCase("com.banno.android.gordontest.TestD", "test1", false, setOf("org.junit.Test", "com.banno.android.gordontest.SecondSubTestSuite")),
+            TestCase("com.banno.android.gordontest.TestD", "test2", false, setOf("org.junit.Test", "com.banno.android.gordontest.SecondSubTestSuite")),
+
+            )
         /**
          * Purposefully ignoring:
          * - AbstractTest, tests in abstract base classes aren't picked up.
